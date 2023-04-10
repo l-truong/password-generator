@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+/* ANIMATION */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(0.5px);
+  }
+  70% {
+    transform: translateY(-2.5px);
+  }
+  80% {
+    transform: translateY(0.2px);
+  }
+  90% {
+    transform: translateY(-1.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+html body {
+  background-color: #3B3B98;
+  color: #000;
+  display: flex;
+  font-family: "Muli", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #11998e; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+html body .container {
+  background-color: #fff;
+  width: 350px;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.1);
+}
+html body .container .password-container {
+  padding: 15px;
+  background: #d3d3d3;
+}
+html body .container .password-container h2 {
+  text-align: center;
+  padding: 0 0 15px 0;
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
+}
+html body .container .password-container .result-container {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  letter-spacing: 1px;
+  padding: 12px 10px;
+  height: 50px;
+  width: 100%;
+  border-radius: 4px;
+}
+html body .container .password-container .result-container #result {
+  word-wrap: break-word;
+  max-width: calc(100% - 40px);
+}
+html body .container .password-container .result-container span {
+  font-size: 0.9rem;
+}
+html body .container .password-container .result-container .btn {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px 0px;
+  position: absolute;
+  top: 5px;
+  height: 40px;
+  width: 25px;
+  text-align: center;
+}
+html body .container .password-container .result-container .btn i {
+  transition: all 0.5s;
+}
+html body .container .password-container .result-container .btn#generate {
+  right: 30px;
+}
+html body .container .password-container .result-container .btn#generate :hover {
+  color: #37a47c;
+}
+html body .container .password-container .result-container .btn#generate.animation-spin {
+  animation-name: spin;
+  animation-duration: 0.5s;
+  color: #37a47c;
+}
+html body .container .password-container .result-container .btn#clipboard {
+  right: 5px;
+}
+html body .container .password-container .result-container .btn#clipboard :hover {
+  color: #37a47c;
+}
+html body .container .password-container .result-container .btn#clipboard.animation-bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  color: #37a47c;
+}
+html body .container .password-container .strength-bar {
+  margin-top: 5px;
+  height: 5px;
+  width: 100%;
+  background-color: #b6b6b6;
+}
+html body .container .password-container .strength-bar .strength-progress {
+  height: 100%;
+  width: 0%;
+  transition: width 2s;
+}
+html body .container .settings-container {
+  padding: 15px;
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
+}
+html body .container .settings-container .slider-container {
+  margin: 15px 0;
+}
+html body .container .settings-container .slider-container input {
+  margin: 15px 0 0 0;
+  width: 100%;
+}
+html body .container .settings-container .slider-container .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  transition: opacity 0.2s;
+}
+html body .container .settings-container .slider-container ::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: #37a47c;
+  cursor: pointer;
+}
+html body .container .settings-container .slider-container ::-webkit-slider-thumb:hover, html body .container .settings-container .slider-container ::-webkit-slider-thumb:active {
+  background: #268160;
+}
+html body .container .settings-container .slider-container ::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: #37a47c;
+  cursor: pointer;
+}
+html body .container .settings-container .slider-container ::-moz-range-thumb:hover, html body .container .settings-container .slider-container ::-moz-range-thumb:active {
+  background: #268160;
+}
+html body .container .settings-container .slider-container input[type=range]::-webkit-slider-runnable-track {
+  color: #37a47c;
+}
+html body .container .settings-container .slider-container input[type=range]::-moz-range-progress {
+  background-color: #37a47c;
+}
+html body .container .settings-container .slider-container input[type=range]::-ms-fill-lower {
+  background-color: #37a47c;
+}
+html body .container .settings-container .setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+html body .container .settings-container .setting p {
+  margin: 5px 0;
+}
+html body .container .settings-container .setting input[type=checkbox] {
+  margin-right: 0;
+  height: 18px;
+  width: 18px;
+  accent-color: #37a47c;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  .result-container {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=style.css.map */

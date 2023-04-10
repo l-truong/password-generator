@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="password-container">	
+			<h2>Password Generator</h2>
+			<div class="result-container">
+				<span id="result"></span>
+				<a class="btn" id="clipboard">
+					<i class="far fa-clipboard"></i>
+				</a>
+				<a class="btn" id="generate">
+					<i class="fa-solid fa-arrows-rotate"></i>
+				</a>
+			</div>		
+			<div class="strength-bar">
+				<div id="strength-progress" class="strength-progress"></div>
+			</div>	
+		</div>
+		<div class="settings-container">			
+			<div class="slider-container">
+				<label>Length (<span id="demo"></span>)</label>
+				<input type="range" min="4" max="20" value="12" class="slider" id="length">				
+			</div>
+			<hr>
+			<div class="setting">
+				<label>Uppercase letters (e.g. ABC)</label> 
+				<input type="checkbox" id="uppercase" checked />
+			</div>
+			<div class="setting">
+				<label>Lowercase letters (e.g. abc)</label> 
+				<input type="checkbox" id="lowercase" checked />
+			</div>
+			<div class="setting">
+				<label>Digits (e.g. 345)</label> 
+				<input type="checkbox" id="numbers" checked />
+			</div>
+			<div class="setting">
+				<label>Symbols (@&$!#?)</label> 
+				<input type="checkbox" id="symbols" checked />
+			</div>
+		</div>
+	</div>
+    <script src="script.js"></script>
+</body>
+</html>
